@@ -15,12 +15,14 @@ import Proyectito.EstadoHab;
 public class Habitacion {
     private int nroHabitacion;
     private int cantCamas;
+    private double precioXHuesp;
     private TipoHab tipoHabitacion;
     private EstadoHab estado;
 
-    public Habitacion(int nroHabitacion, int cantCamas, TipoHab tipoHabitacion, EstadoHab estado) {
+    public Habitacion(int nroHabitacion, int cantCamas, double precioXHuesp, TipoHab tipoHabitacion, EstadoHab estado) {
         this.nroHabitacion = nroHabitacion;
         this.cantCamas = cantCamas;
+        this.precioXHuesp = precioXHuesp;
         this.tipoHabitacion = tipoHabitacion;
         this.estado = estado;
     }
@@ -41,6 +43,15 @@ public class Habitacion {
         this.cantCamas = cantCamas;
     }
 
+    public double getPrecioXHuesp() {
+        return precioXHuesp;
+    }
+
+    public void setPrecioXHuesp(double precioXHuesp) {
+        this.precioXHuesp = precioXHuesp;
+    }
+
+    
     public TipoHab getTipoHabitacion() {
         return tipoHabitacion;
     }
