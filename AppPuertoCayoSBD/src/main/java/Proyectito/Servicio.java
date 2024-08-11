@@ -1,4 +1,8 @@
+package Proyectito;
 
+
+import Proyectito.Huesped;
+import Proyectito.Empleado;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
