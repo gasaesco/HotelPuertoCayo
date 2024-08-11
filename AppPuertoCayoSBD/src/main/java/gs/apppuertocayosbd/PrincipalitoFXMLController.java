@@ -20,7 +20,8 @@ public class PrincipalitoFXMLController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+       Proyectito.CConexion objetoConexion= new Proyectito.CConexion();
+       objetoConexion.estableceConexion();
     }    
     
 }
