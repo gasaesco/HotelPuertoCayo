@@ -67,7 +67,7 @@ public class DatosHuespedController implements Initializable {
     @FXML
     private void modificarHuesped(ActionEvent event){
         Proyectito.CHuesped objetoHuesped = new Proyectito.CHuesped();
-        objetoHuesped.ModificarUsuario(txtCedHuesped, txtNombres, txtApellidos, txtNacionalidad, txtTelefono, txtCorreo);
+        objetoHuesped.ModificarHuesped(txtCedHuesped, txtNombres, txtApellidos, txtNacionalidad, txtTelefono, txtCorreo);
         tbHuesped.getColumns().clear();
         tbHuesped.getItems().clear();
         objetoHuesped.MostrarHuesped(tbHuesped);
