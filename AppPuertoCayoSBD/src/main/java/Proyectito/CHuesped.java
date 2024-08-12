@@ -138,7 +138,7 @@ public class CHuesped {
 
 
     }
-
+//logica para modificar Huesped
     public void ModificarUsuario(TextField cedHuesped, TextField nombres,TextField apellidos, TextField nacionalidad, TextField telefono, TextField correo){
     
     CConexion objetoConexion = new CConexion();
@@ -170,7 +170,7 @@ public class CHuesped {
     
     }
     
-    
+    //logica para Eliminar Huesped
         public void EliminarHuesped (TextField cedHuesped){
     
         CConexion objetoConexion = new CConexion();
