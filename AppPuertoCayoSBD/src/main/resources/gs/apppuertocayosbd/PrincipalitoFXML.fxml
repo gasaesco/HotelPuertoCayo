@@ -5,8 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="gs.apppuertocayosbd.PrincipalitoFXMLController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gs.apppuertocayosbd.PrincipalitoFXMLController">
    <children>
       <Label layoutX="58.0" layoutY="34.0" prefHeight="70.0" prefWidth="500.0" text="HOTEL PUERTO CAYO">
          <font>
@@ -19,7 +18,7 @@
          </font>
       </Label>
       <Label layoutX="195.0" layoutY="192.0" text="SELECCIONE SU TIPO DE USUARIO" />
-      <Button fx:id="huespedbtn" layoutX="127.0" layoutY="274.0" mnemonicParsing="false" text="Huésped" />
+      <Button fx:id="btnHuesped" layoutX="127.0" layoutY="274.0" mnemonicParsing="false" text="Huésped" />
       <Button fx:id="empleadobtn" layoutX="369.0" layoutY="274.0" mnemonicParsing="false" text="Empleado" />
    </children>
 </AnchorPane>

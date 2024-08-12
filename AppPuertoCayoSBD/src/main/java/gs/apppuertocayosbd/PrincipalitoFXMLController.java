@@ -4,9 +4,13 @@
  */
 package gs.apppuertocayosbd;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 
 /**
  * FXML Controller class
@@ -14,6 +18,9 @@ import javafx.fxml.Initializable;
  * @author crisp
  */
 public class PrincipalitoFXMLController implements Initializable {
+    
+    @FXML
+    private Button btnHuesped;
 
     /**
      * Initializes the controller class.
@@ -22,6 +29,29 @@ public class PrincipalitoFXMLController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
        Proyectito.CConexion objetoConexion= new Proyectito.CConexion();
        objetoConexion.estableceConexion();
+       btnHuesped.setOnAction(event -> irADatosHuesped());
     }    
     
-}
+    private void irADatosHuesped() {
+        try {
+            // Cambia la escena a DatosHuesped
+            App.setRoot("DatosHuesped");
+            showAlert("Informacion", "Se cargo con exito la ventana DatosHuesped");
+        } catch (IOException e) {
+            // Manejo de excepciones
+            showAlert("Informacion", "o se pudo cargar la ventana de DatosHuesped: "+ e.toString());
+        }
+    }
+    
+    private void showAlert(String title, String content){
+        Alert alert= new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(content);
+        alert.showAndWait();
+    }    
+    
+    
+}    
+    
+

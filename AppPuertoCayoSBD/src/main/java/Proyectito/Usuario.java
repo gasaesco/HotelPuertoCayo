@@ -4,6 +4,11 @@
  */
 package Proyectito;
 
+import java.io.FileInputStream;
+import java.sql.CallableStatement;
+import javafx.scene.control.Alert;
+import javafx.scene.control.TextField;
+
 /**
  *
  * @author crisp
@@ -30,4 +35,16 @@ public class Usuario {
     public void setCedula(String cedula) {
         this.cedula = cedula;
     }
+    
+    
+  
+        
+    private void showAlert(String title, String content){
+        Alert alert= new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(content);
+        alert.showAndWait();
+    }        
+    
 }

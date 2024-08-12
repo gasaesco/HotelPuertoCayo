@@ -6,7 +6,10 @@ package gs.apppuertocayosbd;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
@@ -14,13 +17,34 @@ import javafx.fxml.Initializable;
  * @author crisp
  */
 public class DatosHuespedController implements Initializable {
+    
+    @FXML
+    private TextField txtCedHuesped;
+    @FXML
+    private TextField txtNombres;
+    @FXML
+    private TextField txtApellidos;
+    @FXML
+    private TextField txtNacionalidad;
+    @FXML
+    private TextField txtTelefono;
+    @FXML
+    private TextField txtCorreo;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        
     }    
+    
+    
+    @FXML
+    
+    private void guardarHuesped(ActionEvent event){
+        Proyectito.CHuesped objetoHuesped= new Proyectito.CHuesped();
+        objetoHuesped.agregarHuesped(txtCedHuesped, txtNombres, txtApellidos, txtNacionalidad, txtTelefono, txtCorreo);
+    }
     
 }

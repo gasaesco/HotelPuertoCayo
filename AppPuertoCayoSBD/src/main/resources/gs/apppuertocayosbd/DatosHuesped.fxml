@@ -8,8 +8,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="455.0" prefWidth="882.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="gs.apppuertocayosbd.DatosHuespedController">
+<AnchorPane id="AnchorPane" prefHeight="455.0" prefWidth="882.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gs.apppuertocayosbd.DatosHuespedController">
    <children>
       <Pane layoutX="14.0" layoutY="56.0" prefHeight="318.0" prefWidth="362.0" style="-fx-border-color: A3A3A3;">
          <children>
@@ -19,13 +18,13 @@
             <Label layoutX="14.0" layoutY="159.0" text="Nacionalidad:" />
             <Label layoutX="15.0" layoutY="206.0" text="Teléfono:" />
             <Label layoutX="14.0" layoutY="248.0" text="Correo:" />
-            <TextField layoutX="99.0" layoutY="25.0" prefHeight="25.0" prefWidth="243.0" />
-            <TextField layoutX="99.0" layoutY="69.0" prefHeight="25.0" prefWidth="243.0" />
-            <TextField layoutX="99.0" layoutY="116.0" prefHeight="25.0" prefWidth="243.0" />
-            <TextField layoutX="99.0" layoutY="155.0" prefHeight="25.0" prefWidth="243.0" />
-            <TextField layoutX="99.0" layoutY="202.0" prefHeight="25.0" prefWidth="243.0" />
-            <TextField layoutX="99.0" layoutY="244.0" prefHeight="25.0" prefWidth="243.0" />
-            <Button layoutX="145.0" layoutY="280.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="72.0" text="Guardar" />
+            <TextField fx:id="txtCedHuesped" layoutX="99.0" layoutY="25.0" prefHeight="25.0" prefWidth="243.0" />
+            <TextField fx:id="txtNombres" layoutX="99.0" layoutY="69.0" prefHeight="25.0" prefWidth="243.0" />
+            <TextField fx:id="txtApellidos" layoutX="99.0" layoutY="116.0" prefHeight="25.0" prefWidth="243.0" />
+            <TextField fx:id="txtNacionalidad" layoutX="99.0" layoutY="155.0" prefHeight="25.0" prefWidth="243.0" />
+            <TextField fx:id="txtTelefono" layoutX="99.0" layoutY="202.0" prefHeight="25.0" prefWidth="243.0" />
+            <TextField fx:id="txtCorreo" layoutX="99.0" layoutY="244.0" prefHeight="25.0" prefWidth="243.0" />
+            <Button layoutX="145.0" layoutY="280.0" mnemonicParsing="false" onAction="#guardarHuesped" prefHeight="35.0" prefWidth="72.0" text="Guardar" />
          </children>
       </Pane>
       <Label layoutX="28.0" layoutY="14.0" text="Formulario de Registro">
