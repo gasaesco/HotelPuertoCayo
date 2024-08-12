@@ -9,7 +9,9 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 
 /**
  * FXML Controller class
@@ -30,13 +32,17 @@ public class DatosHuespedController implements Initializable {
     private TextField txtTelefono;
     @FXML
     private TextField txtCorreo;
+   @FXML
+   private TableView<Object[]> tbHuesped;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+        Proyectito.CHuesped objetoHuesped= new Proyectito.CHuesped();
+        objetoHuesped.MostrarHuesped(tbHuesped);
+        txtCedHuesped.setDisable(true);
     }    
     
     
@@ -45,6 +51,39 @@ public class DatosHuespedController implements Initializable {
     private void guardarHuesped(ActionEvent event){
         Proyectito.CHuesped objetoHuesped= new Proyectito.CHuesped();
         objetoHuesped.agregarHuesped(txtCedHuesped, txtNombres, txtApellidos, txtNacionalidad, txtTelefono, txtCorreo);
+        tbHuesped.getColumns().clear();
+        tbHuesped.getItems().clear();
+        objetoHuesped.MostrarHuesped(tbHuesped);
+        objetoHuesped.limpiarCampos(txtCedHuesped, txtNombres, txtApellidos, txtNacionalidad, txtTelefono, txtCorreo);
     }
+    
+    @FXML
+    private void seleccionaHuesped (MouseEvent event){
+        Proyectito.CHuesped objetoUsuarios = new Proyectito.CHuesped();
+        objetoUsuarios.SeleccionarHuesped(tbHuesped, txtCedHuesped, txtNombres, txtApellidos, txtNacionalidad, txtTelefono, txtCorreo);
+
+    }
+    
+    @FXML
+    private void modificarHuesped(ActionEvent event){
+        Proyectito.CHuesped objetoHuesped = new Proyectito.CHuesped();
+        objetoHuesped.ModificarUsuario(txtCedHuesped, txtNombres, txtApellidos, txtNacionalidad, txtTelefono, txtCorreo);
+        tbHuesped.getColumns().clear();
+        tbHuesped.getItems().clear();
+        objetoHuesped.MostrarHuesped(tbHuesped);
+        objetoHuesped.limpiarCampos(txtCedHuesped, txtNombres, txtApellidos, txtNacionalidad, txtTelefono, txtCorreo);
+    }
+
+    @FXML
+    private void eliminarHuesped(ActionEvent event){
+
+    Proyectito.CHuesped objetoHuesped = new Proyectito.CHuesped();
+    objetoHuesped.EliminarHuesped(txtCedHuesped);
+    tbHuesped.getColumns().clear();
+    tbHuesped.getItems().clear();
+    objetoHuesped.MostrarHuesped(tbHuesped);
+    objetoHuesped.limpiarCampos(txtCedHuesped, txtNombres, txtApellidos, txtNacionalidad, txtTelefono, txtCorreo);
+    }
+    
     
 }
