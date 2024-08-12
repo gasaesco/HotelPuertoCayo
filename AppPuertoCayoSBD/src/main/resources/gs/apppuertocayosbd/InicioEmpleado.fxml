@@ -10,7 +10,7 @@
    <children>
       <VBox alignment="CENTER" prefHeight="121.0" prefWidth="600.0">
          <children>
-            <Label text="¡Bienvenido/a, !">
+            <Label fx:id="titulo" text="¡Bienvenido/a, !">
                <font>
                   <Font size="36.0" />
                </font>
@@ -19,32 +19,32 @@
       </VBox>
       <VBox alignment="CENTER" prefHeight="50.0" prefWidth="600.0">
          <children>
-            <Button mnemonicParsing="false" text="Registrar empleado" />
+            <Button fx:id="btnRegistrarEmp" mnemonicParsing="false" text="Registrar empleado" />
          </children>
       </VBox>
       <VBox alignment="CENTER" prefHeight="51.0" prefWidth="600.0">
          <children>
-            <Button mnemonicParsing="false" text="Registrar servicio" />
+            <Button fx:id="btnRegistrarServ" mnemonicParsing="false" text="Registrar servicio" />
          </children>
       </VBox>
       <VBox alignment="CENTER" prefHeight="52.0" prefWidth="600.0">
          <children>
-            <Button mnemonicParsing="false" text="Registrar proveedor" />
+            <Button fx:id="btnRegistrarProv" mnemonicParsing="false" text="Registrar proveedor" />
          </children>
       </VBox>
       <VBox alignment="CENTER" prefHeight="50.0" prefWidth="600.0">
          <children>
-            <Button mnemonicParsing="false" text="Registrar habitacion" />
+            <Button fx:id="btnRegistrarHab" mnemonicParsing="false" text="Registrar habitacion" />
          </children>
       </VBox>
       <VBox alignment="CENTER" prefHeight="53.0" prefWidth="600.0">
          <children>
-            <Button mnemonicParsing="false" text="Ver inventario" />
+            <Button fx:id="btnVerInventario" mnemonicParsing="false" text="Ver inventario" />
          </children>
       </VBox>
       <VBox alignment="CENTER_RIGHT" prefHeight="53.0" prefWidth="600.0">
          <children>
-            <Button mnemonicParsing="false" text="Salir" />
+            <Button fx:id="btnSalir" mnemonicParsing="false" text="Salir" />
          </children>
          <padding>
             <Insets right="50.0" />
