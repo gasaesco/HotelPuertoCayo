@@ -15,7 +15,7 @@ import javafx.scene.control.TextField;
 /**
  * FXML Controller class
  *
- * @author gasaesco
+ * @author Marsa
  */
 public class DatosEmpleadoController implements Initializable {
 
@@ -57,7 +57,14 @@ public class DatosEmpleadoController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+  
+    }   
+      @FXML
+    
+    private void guardarEmpleado(ActionEvent event){
+        Proyectito.CEmpleado objetoEmpleado= new Proyectito.CEmpleado();
+        objetoEmpleado.agregarEmpleado(campoCed,campoNombres,campoApellidos, campoTelf,campoCorreo,campoSueldo,campoJefe);
+    }
+
     
 }
