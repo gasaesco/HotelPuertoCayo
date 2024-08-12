@@ -139,7 +139,7 @@ public class CHuesped {
 
     }
 //logica para modificar Huesped
-    public void ModificarUsuario(TextField cedHuesped, TextField nombres,TextField apellidos, TextField nacionalidad, TextField telefono, TextField correo){
+    public void ModificarHuesped(TextField cedHuesped, TextField nombres,TextField apellidos, TextField nacionalidad, TextField telefono, TextField correo){
     
     CConexion objetoConexion = new CConexion();
     
