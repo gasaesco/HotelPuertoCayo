@@ -35,7 +35,6 @@ public class App extends Application {
         launch();
     }
     
-    // probando cambios con mi cuenta arreglada :D
-    // segunda prueba
+    // probando cambios este si final finaaal imprimir
 
 }
