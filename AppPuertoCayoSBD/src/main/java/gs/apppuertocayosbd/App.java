@@ -35,12 +35,13 @@ public class App extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
         return fxmlLoader.load();
     }
-    private void configuracionVentana(Stage stage) throws IOException{
+    public static void configuracionVentana(Stage stage) throws IOException{
         stage.setResizable(true);
         stage.initStyle(StageStyle.UNDECORATED);
         stage.setTitle("Hotel Puerto Cayo | Inicio");
         stage.getIcons().add(icono);
     }
+    
 
     public static void main(String[] args) {
         launch();

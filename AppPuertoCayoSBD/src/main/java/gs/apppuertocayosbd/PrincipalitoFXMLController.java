@@ -41,7 +41,7 @@ public class PrincipalitoFXMLController implements Initializable {
     }    
     @FXML
     private void irADatosHuesped() throws IOException {
-        App.setRoot("DatosHuesped");
+        App.setRoot("DatosHuesped");        
     }
     
     
