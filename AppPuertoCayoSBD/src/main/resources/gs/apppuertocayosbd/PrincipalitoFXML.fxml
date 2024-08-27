@@ -1,24 +1,124 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gs.apppuertocayosbd.PrincipalitoFXMLController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gs.apppuertocayosbd.PrincipalitoFXMLController">
    <children>
-      <Label layoutX="58.0" layoutY="34.0" prefHeight="70.0" prefWidth="500.0" text="HOTEL PUERTO CAYO">
-         <font>
-            <Font size="48.0" />
-         </font>
-      </Label>
-      <Label layoutX="209.0" layoutY="122.0" text="¡Bienvenidos!">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <Label layoutX="195.0" layoutY="192.0" text="SELECCIONE SU TIPO DE USUARIO" />
-      <Button fx:id="btnHuesped" layoutX="127.0" layoutY="274.0" mnemonicParsing="false" text="Huésped" />
-      <Button fx:id="empleadobtn" layoutX="369.0" layoutY="274.0" mnemonicParsing="false" text="Empleado" />
+      <HBox prefHeight="720.0" prefWidth="1080.0">
+         <children>
+            <VBox prefHeight="720.0" prefWidth="540.0">
+               <children>
+                  <ImageView fitHeight="720.0" fitWidth="540.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../images/inicio/inicio.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" prefHeight="720.0" prefWidth="540.0" style="-fx-background-color: F0F0F0;">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="110.0" prefWidth="540.0">
+                     <children>
+                        <ImageView fitHeight="91.0" fitWidth="378.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/logos/puertoLogo.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="580.0" prefWidth="540.0">
+                     <children>
+                        <HBox alignment="BOTTOM_LEFT" prefHeight="3.0" prefWidth="500.0" style="-fx-background-color: FAD11B;">
+                           <VBox.margin>
+                              <Insets left="5.0" right="5.0" top="5.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <VBox.margin>
+                              <Insets top="120.0" />
+                           </VBox.margin>
+                           <children>
+                              <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="540.0">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="64.0" prefWidth="258.0" text="¡Bienvenido!" textAlignment="CENTER">
+                                       <font>
+                                          <Font name="Franklin Gothic Medium" size="30.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" prefHeight="50.0" prefWidth="347.0" text="Seleccione un tipo de usuario" textAlignment="CENTER">
+                                       <font>
+                                          <Font name="Franklin Gothic Book" size="23.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="540.0">
+                           <children>
+                              <VBox alignment="CENTER" prefWidth="250.0">
+                                 <children>
+                                    <Button fx:id="btnHuesped" contentDisplay="TOP" graphicTextGap="20.0" mnemonicParsing="false" onAction="#irADatosHuesped" prefHeight="121.0" prefWidth="215.0" style="-fx-background-color: transparent; -fx-border-radius: 10; -fx-border-color: FAD11B; -fx-border-width: 2;" text="Huésped">
+                                       <font>
+                                          <Font name="Franklin Gothic Medium" size="22.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                       <graphic>
+                                          <ImageView fitHeight="75.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../images/inicio/huesped.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefWidth="250.0">
+                                 <children>
+                                    <Button contentDisplay="TOP" graphicTextGap="20.0" mnemonicParsing="false" prefHeight="145.0" prefWidth="215.0" style="-fx-background-color: transparent; -fx-border-radius: 10; -fx-border-color: FAD11B; -fx-border-width: 2;" text="Empleado">
+                                       <graphic>
+                                          <ImageView fitHeight="80.0" fitWidth="112.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../images/inicio/empleado.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <font>
+                                          <Font name="Franklin Gothic Medium" size="22.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="29.0" prefWidth="540.0" style="-fx-background-color: FAD11B;">
+                     <children>
+                        <Label text="Puerto Cayo | © Derechos reservados | 2024">
+                           <font>
+                              <Font name="Franklin Gothic Medium" size="17.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
    </children>
-</AnchorPane>
+</Pane>
