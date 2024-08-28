@@ -37,9 +37,11 @@ public class App extends Application {
     }
     public static void configuracionVentana(Stage stage) throws IOException{
         stage.setResizable(true);
-        stage.initStyle(StageStyle.UNDECORATED);
-        stage.setTitle("Hotel Puerto Cayo | Inicio");
+        stage.setTitle("Hotel Puerto Cayo");
+        stage.minHeightProperty().set(720);
+        stage.minWidthProperty().set(1080);
         stage.getIcons().add(icono);
+        stage.setResizable(false);
     }
     
 

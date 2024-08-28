@@ -67,7 +67,7 @@
                            <children>
                               <VBox alignment="CENTER" prefWidth="250.0">
                                  <children>
-                                    <Button fx:id="btnHuesped" contentDisplay="TOP" graphicTextGap="20.0" mnemonicParsing="false" onAction="#irADatosHuesped" prefHeight="121.0" prefWidth="215.0" style="-fx-background-color: transparent; -fx-border-radius: 10; -fx-border-color: FAD11B; -fx-border-width: 2;" text="Huésped">
+                                    <Button fx:id="btnHuesped" contentDisplay="TOP" graphicTextGap="20.0" mnemonicParsing="false" onAction="#InicioHuesped" prefHeight="121.0" prefWidth="215.0" style="-fx-background-color: transparent; -fx-border-radius: 10; -fx-border-color: FAD11B; -fx-border-width: 2;" text="Huésped">
                                        <font>
                                           <Font name="Franklin Gothic Medium" size="22.0" />
                                        </font>
@@ -86,7 +86,7 @@
                               </VBox>
                               <VBox alignment="CENTER" prefWidth="250.0">
                                  <children>
-                                    <Button contentDisplay="TOP" graphicTextGap="20.0" mnemonicParsing="false" prefHeight="145.0" prefWidth="215.0" style="-fx-background-color: transparent; -fx-border-radius: 10; -fx-border-color: FAD11B; -fx-border-width: 2;" text="Empleado">
+                                    <Button fx:id="btnEmpleado" contentDisplay="TOP" graphicTextGap="20.0" mnemonicParsing="false" onAction="#InicioEmpleado" prefHeight="145.0" prefWidth="215.0" style="-fx-background-color: transparent; -fx-border-radius: 10; -fx-border-color: FAD11B; -fx-border-width: 2;" text="Empleado">
                                        <graphic>
                                           <ImageView fitHeight="80.0" fitWidth="112.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -97,6 +97,9 @@
                                        <font>
                                           <Font name="Franklin Gothic Medium" size="22.0" />
                                        </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
                                     </Button>
                                  </children>
                               </VBox>

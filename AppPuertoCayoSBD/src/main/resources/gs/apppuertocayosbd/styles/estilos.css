@@ -1,0 +1,21 @@
+.button {
+    -fx-background-color: transparent;
+    -fx-border-radius: 5px;
+    -fx-border-color:  #26232A;
+    -fx-border-width: 2px;
+    -fx-pref-width: 275;
+    -fx-pref-height: 70;
+    -fx-font-size: 25;
+    -fx-cursor: hand;
+     -fx-font-family: Franklin Gothic Medium;
+}
+.button:hover{
+    -fx-border-color:  #FAD11B;
+    -fx-background-color: #F0F0F0;
+}
+.label{
+    -fx-font-family: Franklin Gothic Medium;
+    -fx-font-size: 30;
+    -fx-text-alignment: center;
+    -fx-font-weight: bold;
+}

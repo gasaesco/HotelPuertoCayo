@@ -23,7 +23,8 @@ public class PrincipalitoFXMLController implements Initializable {
     
     @FXML
     private Button btnHuesped;
-
+@FXML
+    private Button btnEmpleado;
     /**
      * Initializes the controller class.
      */
@@ -33,15 +34,27 @@ public class PrincipalitoFXMLController implements Initializable {
        objetoConexion.estableceConexion();
        btnHuesped.setOnAction(event -> {
            try {
-               irADatosHuesped();
+               InicioHuesped();
+           } catch (IOException ex) {
+               Logger.getLogger(PrincipalitoFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+           }
+       });
+       btnEmpleado.setOnAction(event -> {
+           try {
+               InicioEmpleado();
            } catch (IOException ex) {
                Logger.getLogger(PrincipalitoFXMLController.class.getName()).log(Level.SEVERE, null, ex);
            }
        });
     }    
     @FXML
-    private void irADatosHuesped() throws IOException {
-        App.setRoot("DatosHuesped");        
+    private void InicioHuesped() throws IOException {
+        App.setRoot("InicioHuesped");      
+    }
+    
+    @FXML
+    private void InicioEmpleado() throws IOException {
+        App.setRoot("InicioEmpleado");        
     }
     
     
