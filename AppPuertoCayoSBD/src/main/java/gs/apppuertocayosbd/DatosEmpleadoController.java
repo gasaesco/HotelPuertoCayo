@@ -60,12 +60,8 @@ public class DatosEmpleadoController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
   
     }   
-      @FXML
-    
-    private void guardarEmpleado(ActionEvent event){
-        Proyectito.CEmpleado objetoEmpleado= new Proyectito.CEmpleado();
-        objetoEmpleado.agregarEmpleado(campoCed,campoNombres,campoApellidos, campoTelf,campoCorreo,campoSueldo,campoJefe);
-    }
-
-    
 }
+    
+   
+
+   

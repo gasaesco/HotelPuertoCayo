@@ -1,5 +1,6 @@
 package gs.apppuertocayosbd;
 
+import Proyectito.AzureConexion;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -7,6 +8,10 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import javafx.scene.image.Image;
 import javafx.stage.StageStyle;
 
@@ -17,6 +22,7 @@ public class App extends Application {
 
     private static Scene scene;
     private static final Image icono = new Image("@../../images/logos/logoPC.png");
+    
     
 
     @Override
@@ -45,8 +51,22 @@ public class App extends Application {
     }
     
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
+        consultaPrueba();
+       
         launch();
     }
+    
+    private static void consultaPrueba() throws SQLException{
+            Connection connection = AzureConexion.getConnection();
+            Statement statement = connection.createStatement();
+            String sqlQuery = "SELECT * FROM huesped"; 
+            ResultSet resultSet = statement.executeQuery(sqlQuery);
+
+            
+            while (resultSet.next()) {
+                System.out.println("Nombre: " + resultSet.getString("nombres"));
+            }
+   }
 
 }
