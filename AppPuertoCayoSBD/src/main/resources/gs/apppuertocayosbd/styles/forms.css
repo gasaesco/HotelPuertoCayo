@@ -1,0 +1,67 @@
+.button {
+    -fx-background-color: transparent;
+    -fx-border-radius: 5px;
+    -fx-border-color:  #26232A;
+    -fx-border-width: 2px;
+    -fx-pref-width: 180;
+    -fx-pref-height: 30;
+    -fx-font-size: 15;
+    -fx-cursor: hand;
+     -fx-font-family: Franklin Gothic Medium;
+    
+}
+.button:hover{
+    -fx-border-color:  #FAD11B;
+    -fx-background-color: #F0F0F0;
+}
+
+.label{
+    -fx-font-family: Franklin Gothic Medium;
+    -fx-font-size: 20;
+    
+}
+
+.combo-box{
+    -fx-background-color: transparent;
+    -fx-border-radius: 5px;
+    -fx-border-color:  #26232A;
+    -fx-border-width: 1px;
+    -fx-font-size: 15;
+    -fx-pref-width: 180;
+    -fx-pref-height: 30;
+    -fx-cursor: hand;
+     -fx-font-family: Franklin Gothic Medium;
+}
+.combo-box:hover{
+    -fx-border-color:  #FAD11B;
+    -fx-background-color: #F0F0F0;
+}
+
+.text-field{
+    -fx-background-color: transparent;
+    -fx-border-radius: 5px;
+    -fx-border-color:  #26232A;
+    -fx-border-width: 1px;
+    -fx-font-size: 15;
+    -fx-pref-width: 180;
+    -fx-pref-height: 30;
+    -fx-cursor: hand;
+     -fx-font-family: Franklin Gothic Medium;
+}
+
+.spinner{
+    -fx-background-color: transparent;
+    -fx-border-radius: 5px;
+    -fx-border-color:  #26232A;
+    -fx-border-width: 1px;
+    -fx-font-size: 15;
+    -fx-pref-width: 180;
+    -fx-pref-height: 30;
+    -fx-cursor: hand;
+     -fx-font-family: Franklin Gothic Medium;
+}
+.spinner .increment-button, .spinner .decrement-button {
+    -fx-background-color: transparent;
+    -fx-border-radius: 3px;
+    -fx-padding: 3px;
+}

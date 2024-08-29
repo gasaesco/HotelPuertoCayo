@@ -19,3 +19,9 @@
     -fx-text-alignment: center;
     -fx-font-weight: bold;
 }
+#btnRecepcionAdmin{
+      -fx-pref-width: 350;
+}
+#back{
+    -fx-cursor: hand;
+}

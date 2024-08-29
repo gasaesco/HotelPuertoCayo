@@ -5,12 +5,14 @@
 package gs.apppuertocayosbd;
 
 import Proyectito.Empleado;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 
 /**
  * FXML Controller class
@@ -18,43 +20,23 @@ import javafx.scene.control.Label;
  * @author gasaesco
  */
 public class InicioEmpleadoController implements Initializable {
-
     @FXML
-    private Label titulo;
-    
-    @FXML
-    private Button btnRegistrarEmp;
-    
-    @FXML
-    private Button btnRegistrarServ;
-    
-    @FXML
-    private Button btnRegistrarProv;
-    
-    @FXML
-    private Button btnRegistrarHab;
-    
-    @FXML
-    private Button btnVerInventario;
-    
-    @FXML
-    private Button btnSalir;
-    
-    /**
-     * Initializes the controller class.
-     */
-    
-    public void actualizarTitulo(Empleado emp){
-        if (emp != null && emp.getNombre() != null){
-            titulo.setText(("¡Bienvenido/a, "+ emp.getNombre() + "!"));
-        }else{
-            titulo.setText("¡Bienvenido/a!");
-        }
-    }
+    private Button back;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        back.setOnAction(event -> {
+           try {
+               regresar();
+           } catch (IOException ex) {
+               Logger.getLogger(PrincipalitoFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+           }
+       });
         
+    }    
+    @FXML
+    private void regresar() throws IOException{
+        App.setRoot("PrincipalitoFXML");
     }
     
 }

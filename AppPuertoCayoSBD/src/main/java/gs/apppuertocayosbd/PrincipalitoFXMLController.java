@@ -23,7 +23,7 @@ public class PrincipalitoFXMLController implements Initializable {
     
     @FXML
     private Button btnHuesped;
-@FXML
+    @FXML
     private Button btnEmpleado;
     /**
      * Initializes the controller class.

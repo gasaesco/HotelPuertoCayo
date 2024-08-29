@@ -10,17 +10,21 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gs.apppuertocayosbd.InicioEmpleadoController">
    <top>
       <HBox alignment="CENTER_LEFT" prefWidth="720.0" style="-fx-background-color: #26232A;" BorderPane.alignment="CENTER">
          <children>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="78.0">
                <children>
-                  <ImageView accessibleRole="BUTTON" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../images/UI/volver.png" />
-                     </image>
-                  </ImageView>
+                  <Button fx:id="back" mnemonicParsing="false" onAction="#regresar" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView fitHeight="47.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/UI/volver.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
                </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="257.0">
