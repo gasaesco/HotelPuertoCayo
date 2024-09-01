@@ -8,11 +8,6 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
-/**
- *
- * @author sebas
- */
 public class AzureConexion {
     private static final String URL = "jdbc:sqlserver://puertocayo.database.windows.net:1433;database=hotelpuertocayodb;"
                 + "user=administrador@puertocayo;"

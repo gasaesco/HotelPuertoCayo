@@ -10,12 +10,12 @@ package Proyectito;
  * @author gasaesco
  */
 public class Huesped extends Usuario{
-    private String nacionalidad;
+    public String nacionalidad;
 
-    public Huesped(String nacionalidad, String cedula, String nombre, String apellido, String correo, String telefono) {
-        super(cedula, nombre, apellido, correo, telefono);
-        this.nacionalidad = nacionalidad;
-    }
+    public Huesped(String cedula, String nombre, String apellido, String correo, String telefono, String nacionalidad) {
+    super(cedula, nombre, apellido, correo, telefono);
+    this.nacionalidad = nacionalidad;
+}
 
     public String getNacionalidad() {
         return nacionalidad;

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
@@ -24,6 +25,9 @@
                            </image>
                         </ImageView>
                      </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Button>
                </children>
             </HBox>
@@ -65,9 +69,9 @@
                   <Insets top="30.0" />
                </VBox.margin>
             </HBox>
-            <VBox alignment="CENTER">
+            <VBox alignment="CENTER" prefHeight="428.0" prefWidth="540.0">
                <children>
-                  <Button contentDisplay="CENTER" mnemonicParsing="false" prefWidth="117.0" text="Ver Reservas">
+                  <Button fx:id="btnVerReservas" contentDisplay="CENTER" mnemonicParsing="false" onAction="#irAVerReservas" prefWidth="117.0" text="Ver Reservas">
                      <VBox.margin>
                         <Insets bottom="10.0" top="10.0" />
                      </VBox.margin>
@@ -77,12 +81,7 @@
                         <Insets bottom="10.0" top="10.0" />
                      </VBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" text="Eliminar Reservas">
-                     <VBox.margin>
-                        <Insets bottom="10.0" top="10.0" />
-                     </VBox.margin>
-                  </Button>
-                  <Button mnemonicParsing="false" text="Ver habitaciones">
+                  <Button fx:id="btnVerHabitaciones" mnemonicParsing="false" onAction="#irAVerReservas" text="Ver habitaciones">
                      <VBox.margin>
                         <Insets bottom="10.0" top="10.0" />
                      </VBox.margin>

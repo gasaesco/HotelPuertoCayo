@@ -9,6 +9,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -19,32 +20,18 @@ import javafx.scene.control.Button;
  * @author gasaesco
  */
 public class InicioHuespedController implements Initializable {
-
-    /**
-     * Initializes the controller class.
-     */
     @FXML
     private Button btnRegistrarReserva;
     @FXML
+    private Button btnVerReservas;
+    @FXML
     private Button back;
+    @FXML
+    private Button btnVerHabitaciones;
     
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        back.setOnAction(event -> {
-           try {
-               regresar();
-           } catch (IOException ex) {
-               Logger.getLogger(PrincipalitoFXMLController.class.getName()).log(Level.SEVERE, null, ex);
-           }
-       });
-        btnRegistrarReserva.setOnAction(event -> {
-           try {
-               irARegistrarReserva();
-           } catch (IOException ex) {
-               Logger.getLogger(PrincipalitoFXMLController.class.getName()).log(Level.SEVERE, null, ex);
-           }
-       });
-        
+    public void initialize(URL url, ResourceBundle rb) {     
+       IniciarBotones();  
     }    
     @FXML
     private void regresar() throws IOException{
@@ -53,5 +40,62 @@ public class InicioHuespedController implements Initializable {
     @FXML
     private void irARegistrarReserva() throws IOException{
         App.setRoot("RegistrarReserva");
+    }
+    @FXML
+    private void irAVerReservas() throws IOException{
+        App.setRoot("VerReservas");
+    }
+    @FXML
+    private void irAVerHabitaciones() throws IOException{
+        App.setRoot("VerHabitaciones");
+    }
+    
+     private void botonRegresar(){
+    back.setOnAction(event -> {
+           try {
+               regresar();
+           } catch (IOException ex) {
+               Logger.getLogger(PrincipalitoFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+           }
+       });
+    }
+     
+     private void botonRegistrarReserva(){
+         btnRegistrarReserva.setOnAction(event -> {
+           try {
+               irARegistrarReserva();
+           } catch (IOException ex) {
+               Logger.getLogger(PrincipalitoFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+           }
+       });
+     }
+     
+     private void botonVerReservas(){
+         btnVerReservas.setOnAction((ActionEvent event) -> {
+           try {
+               irAVerReservas();
+           } catch (IOException ex) {
+               Logger.getLogger(PrincipalitoFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+           }
+       });
+     
+     }
+     
+     private void botonVerHabitaciones(){
+         btnVerHabitaciones.setOnAction((ActionEvent event) -> {
+           try {
+               irAVerHabitaciones();
+           } catch (IOException ex) {
+               Logger.getLogger(PrincipalitoFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+           }
+       });
+     
+     }
+     
+     private void IniciarBotones(){
+         botonRegresar();
+         botonRegistrarReserva();
+         botonVerReservas();
+         botonVerHabitaciones();
     }
 }

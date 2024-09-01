@@ -65,3 +65,61 @@
     -fx-border-radius: 3px;
     -fx-padding: 3px;
 }
+
+/* Estilo para el control del DatePicker */
+.date-picker {
+    -fx-background-color: transparent; /* Color de fondo */
+    -fx-text-fill: #26232A; /* Color del texto */
+}
+
+/* Estilo para el texto cuando se selecciona una fecha */
+.date-picker .text-field {
+    -fx-background-color: transparent;
+    -fx-text-fill: #26232A;
+    -fx-font-size: 15px;
+}
+
+/* Estilo para las celdas del calendario */
+.date-picker-popup .day-cell {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #26232A;
+}
+
+/* Estilo para las celdas del calendario al pasar el cursor */
+.date-picker-popup .day-cell:hover {
+    -fx-background-color: #fad11b;
+    -fx-text-fill: #26232A;
+}
+
+/* Estilo para la celda seleccionada */
+.date-picker-popup .day-cell:selected {
+    -fx-background-color: #e76f51;
+    -fx-text-fill: #26232A;
+}
+
+/* Estilo para el header del calendario */
+.date-picker-popup .month-label, 
+.date-picker-popup .year-label {
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+/* Estilo para los botones del header */
+.date-picker-popup .button {
+    -fx-border-radius: 5px;
+     -fx-border-color:  transparent;
+    -fx-border-width: 0px;
+
+}
+.date-picker-popup .button:hover{
+    -fx-border-color:  #26232A;
+    -fx-border-width: 2px;
+    -fx-background-color: transparent;
+    
+
+}
+
+#cmbMinutos{
+        -fx-width: 30;
+    
+}

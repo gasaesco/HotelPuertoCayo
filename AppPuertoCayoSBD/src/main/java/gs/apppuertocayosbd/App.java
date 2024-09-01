@@ -52,21 +52,7 @@ public class App extends Application {
     
 
     public static void main(String[] args) throws SQLException {
-        consultaPrueba();
-       
         launch();
     }
-    
-    private static void consultaPrueba() throws SQLException{
-            Connection connection = AzureConexion.getConnection();
-            Statement statement = connection.createStatement();
-            String sqlQuery = "SELECT * FROM huesped"; 
-            ResultSet resultSet = statement.executeQuery(sqlQuery);
-
-            
-            while (resultSet.next()) {
-                System.out.println("Nombre: " + resultSet.getString("nombres"));
-            }
-   }
 
 }

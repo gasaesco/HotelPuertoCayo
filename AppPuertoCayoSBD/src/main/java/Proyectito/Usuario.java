@@ -32,6 +32,23 @@ public class Usuario {
         return cedula;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+    
+
     public void setCedula(String cedula) {
         this.cedula = cedula;
     }

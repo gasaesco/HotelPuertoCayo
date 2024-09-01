@@ -78,12 +78,12 @@
             <HBox alignment="CENTER" prefHeight="63.0" prefWidth="520.0" />
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <TableView prefHeight="200.0" prefWidth="200.0">
+                  <TableView fx:id="tablaEmpleados" prefHeight="200.0" prefWidth="200.0">
                     <columns>
-                      <TableColumn prefWidth="75.0" text="Cédula" />
-                        <TableColumn prefWidth="75.0" text="Nombres" />
-                        <TableColumn prefWidth="75.0" text="Apellidos" />
-                        <TableColumn prefWidth="75.0" text="Cargo" />
+                      <TableColumn fx:id="cedula" prefWidth="75.0" text="Cédula" />
+                        <TableColumn fx:id="nombres" prefWidth="75.0" text="Nombres" />
+                        <TableColumn fx:id="apellidos" prefWidth="75.0" text="Apellidos" />
+                        <TableColumn fx:id="cargo" prefWidth="75.0" text="Cargo" />
                         <TableColumn prefWidth="75.0" text="Tipo" />
                         <TableColumn prefWidth="75.0" text="Salario" />
                         <TableColumn prefWidth="75.0" text="Jefe" />
