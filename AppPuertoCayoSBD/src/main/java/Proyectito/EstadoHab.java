@@ -10,5 +10,5 @@ package Proyectito;
  * @author gasaesco
  */
 public enum EstadoHab {
-    OCUPADO,DISONIBLE;
+    OCUPADO,DISPONIBLE;
 }

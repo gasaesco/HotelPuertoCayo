@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="741.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gs.apppuertocayosbd.VerReservasController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="823.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gs.apppuertocayosbd.VerReservasController">
    <top>
       <HBox alignment="CENTER_LEFT" prefWidth="720.0" style="-fx-background-color: #26232A;" BorderPane.alignment="CENTER">
          <children>
@@ -80,13 +80,13 @@
       <VBox prefHeight="200.0" prefWidth="30.0" BorderPane.alignment="CENTER" />
    </right>
    <center>
-      <VBox alignment="TOP_CENTER" prefHeight="319.0" prefWidth="660.0" stylesheets="@styles/forms.css" BorderPane.alignment="CENTER">
+      <VBox alignment="TOP_CENTER" prefHeight="626.0" prefWidth="1020.0" stylesheets="@styles/forms.css" BorderPane.alignment="CENTER">
          <children>
             <HBox alignment="CENTER" prefHeight="112.0" prefWidth="837.0">
                <children>
                   <HBox alignment="CENTER_RIGHT" prefHeight="56.0" prefWidth="330.0">
                      <children>
-                        <TextField promptText="Buscar por Cedula">
+                        <TextField fx:id="txtCedula" promptText="Buscar por Cedula">
                            <cursor>
                               <Cursor fx:constant="TEXT" />
                            </cursor></TextField>
@@ -108,7 +108,7 @@
                      </padding>
                   </HBox>
                </children></HBox>
-            <VBox prefHeight="165.0" prefWidth="660.0">
+            <VBox fx:id="seccion" alignment="TOP_CENTER" prefHeight="516.0" prefWidth="1020.0">
                <children>
                   <TableView fx:id="tablaReservas" prefHeight="152.0" prefWidth="660.0">
                     <columns>
@@ -121,83 +121,82 @@
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                      </columnResizePolicy>
                   </TableView>
+                  <HBox alignment="CENTER" prefHeight="342.0" prefWidth="1020.0">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="330.0">
+                           <children>
+                              <VBox fx:id="textoModificar" prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Label text="Nueva fecha de inicio" />
+                                       </children>
+                                       <padding>
+                                          <Insets right="30.0" />
+                                       </padding>
+                                    </HBox>
+                                    <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Label text="Nueva Fecha de salida" />
+                                       </children>
+                                       <padding>
+                                          <Insets right="30.0" />
+                                       </padding>
+                                    </HBox>
+                                    <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Label text="Nueva habitación" />
+                                       </children>
+                                       <padding>
+                                          <Insets right="30.0" />
+                                       </padding>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0" />
+                                    <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Button fx:id="btnCancelar" mnemonicParsing="false" text="Cancelar Reserva" />
+                                       </children>
+                                       <padding>
+                                          <Insets right="30.0" />
+                                       </padding>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="330.0">
+                           <children>
+                              <VBox fx:id="modificar" prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <DatePicker fx:id="dateInicio" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <DatePicker fx:id="dateFin" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <ComboBox fx:id="habitaciones" prefWidth="150.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" />
+                                    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Button fx:id="btnModificar" mnemonicParsing="false" text="Modificar Reserva" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
                </children>
             </VBox>
-            <HBox alignment="CENTER" prefHeight="231.0" prefWidth="660.0">
-               <children>
-                  <VBox prefHeight="200.0" prefWidth="330.0">
-                     <children>
-                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-                           <children>
-                              <Button fx:id="btnCancelar" mnemonicParsing="false" text="Cancelar Reserva" />
-                           </children>
-                        </HBox>
-                        <VBox fx:id="textoModificar" prefHeight="200.0" prefWidth="100.0">
-                           <children>
-                              <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
-                                 <children>
-                                    <Label text="Nueva fecha de inicio" />
-                                 </children>
-                                 <padding>
-                                    <Insets right="30.0" />
-                                 </padding>
-                              </HBox>
-                              <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
-                                 <children>
-                                    <Label text="Nueva Fecha de salida" />
-                                 </children>
-                                 <padding>
-                                    <Insets right="30.0" />
-                                 </padding>
-                              </HBox>
-                              <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
-                                 <children>
-                                    <Label text="Nueva habitación" />
-                                 </children>
-                                 <padding>
-                                    <Insets right="30.0" />
-                                 </padding>
-                              </HBox>
-                              <HBox prefHeight="100.0" prefWidth="200.0" />
-                           </children>
-                        </VBox>
-                     </children>
-                  </VBox>
-                  <VBox prefHeight="200.0" prefWidth="330.0">
-                     <children>
-                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-                           <children>
-                              <Button fx:id="btnModificar" mnemonicParsing="false" text="Modificar Reserva" />
-                           </children>
-                        </HBox>
-                        <VBox fx:id="modificar" prefHeight="200.0" prefWidth="100.0">
-                           <children>
-                              <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
-                                 <children>
-                                    <DatePicker />
-                                 </children>
-                              </HBox>
-                              <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
-                                 <children>
-                                    <DatePicker />
-                                 </children>
-                              </HBox>
-                              <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
-                                 <children>
-                                    <ComboBox fx:id="habitaciones" prefWidth="150.0" />
-                                 </children>
-                              </HBox>
-                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-                                 <children>
-                                    <Button fx:id="btnEnviar" mnemonicParsing="false" text="Modificar Reserva" />
-                                 </children>
-                              </HBox>
-                           </children>
-                        </VBox>
-                     </children>
-                  </VBox>
-               </children>
-            </HBox>
          </children>
       </VBox>
    </center>

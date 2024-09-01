@@ -123,3 +123,9 @@
         -fx-width: 30;
     
 }
+#btnCancelar:hover{
+    -fx-border-color:  #A6132A;
+    -fx-text-fill: #A6132A;
+    -fx-font-weight: bold;
+    -fx-background-color: #F0F0F0;
+}

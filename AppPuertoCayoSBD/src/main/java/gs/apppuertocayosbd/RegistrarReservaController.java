@@ -13,6 +13,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Types;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -24,16 +25,11 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 
-
-/**
- * FXML Controller class
- *
- * @author sebas
- */
 public class RegistrarReservaController implements Initializable {
         @FXML
     private Button back;
@@ -41,6 +37,10 @@ public class RegistrarReservaController implements Initializable {
         private ComboBox cmbMinutos;
         @FXML
         private ComboBox cmbHoras;
+        @FXML
+        private ComboBox cmbMinutos1;
+        @FXML
+        private ComboBox cmbHoras1;
         @FXML
         private TextField txtCedula;
         @FXML
@@ -50,18 +50,20 @@ public class RegistrarReservaController implements Initializable {
         @FXML
         private Button btnValidar; 
         @FXML
+        private Button btnRegistrar; 
+        @FXML
         private Label mostrarNombre;
         @FXML
-        private ComboBox cmbHabitaciones;
-               
-        
+        private ComboBox cmbHabitaciones;  
+        @FXML
+        private DatePicker fechaInicio;
+        @FXML
+        private DatePicker fechaSalida;
         private final ObservableList<String> horas= FXCollections.observableArrayList();
         private final ObservableList<Integer> habitacionesDisponibles= FXCollections.observableArrayList();
+        
+        private static String cedulaUsr;
 
-
-    /**
-     * Initializes the controller class.
-     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         ocultarSecciones();
@@ -98,6 +100,13 @@ public class RegistrarReservaController implements Initializable {
             "00",
             "30"
         );
+        
+        cmbMinutos1.getItems().addAll(
+            "00",
+            "30"
+        );
+
+        
     }
     
     private void setearComboHoras(){
@@ -106,8 +115,8 @@ public class RegistrarReservaController implements Initializable {
             horas.add(String.valueOf(i));
             }
         }
-        System.out.println(horas);
         cmbHoras.setItems(horas);
+        cmbHoras1.setItems(horas);
     }
     
     private void rellenarCombos() throws SQLException{
@@ -115,7 +124,7 @@ public class RegistrarReservaController implements Initializable {
         setearComboHoras();
         setearComboHabitaciones();
     }
-    
+     
    private int buscarClientePorCedula(String cedula) throws SQLException {
     int resultado = 0;
     Connection conexion = null;
@@ -131,6 +140,7 @@ public class RegistrarReservaController implements Initializable {
 
         // Ejecutar el procedimiento
         stmt.execute();
+        
 
         // Obtener el valor del parámetro de salida
         resultado = stmt.getInt(2);
@@ -175,24 +185,37 @@ public class RegistrarReservaController implements Initializable {
             
         }
         cmbHabitaciones.setItems(habitacionesDisponibles);
+        if(cmbHabitaciones.getItems().isEmpty()){
+            
+            Alert alerta = new Alert(AlertType.ERROR);
+            alerta.setTitle("No hay habitaciones disponibles");
+            alerta.setHeaderText(null);
+            alerta.setContentText("Ya no existen reservas para el hotel disponibles");
+            alerta.showAndWait();
+            App.setRoot("PrincipalitoFXML");
+            
         
+        }
         
          
          }catch (SQLException e) { 
              
-    }
+    }       catch (IOException ex) {
+                Logger.getLogger(RegistrarReservaController.class.getName()).log(Level.SEVERE, null, ex);
+            }
    
    }
    
    @FXML
    private void activarSeccion() throws SQLException{
-       String cedulaUsr = txtCedula.getText();
+       cedulaUsr = txtCedula.getText();
        int valido = buscarClientePorCedula(cedulaUsr);
        if(valido == 1){
            mostrarSecciones();
            btnValidar.setVisible(false);
            txtCedula.setVisible(false);
            mostrarNombre.setText("Sea bienvenido/a continue con su registro para la reserva");
+           botonRegistrar();
                   
        }else{
            txtCedula.setText("");
@@ -225,5 +248,59 @@ public class RegistrarReservaController implements Initializable {
        });
     }
     
+   
+    private void botonRegistrar(){
+        btnRegistrar.setOnAction(event -> {
+            insertarInfo();
+       });
+    }            
+   @FXML 
+   private void insertarInfo(){
+       int codigoUnico = 1;
+       int nHabitacion = (Integer) cmbHabitaciones.getValue();
+       String fechaIn = fechaInicio.getValue().toString();
+       String fechaSa = fechaSalida.getValue().toString();
+       String horaIn = cmbHoras.getValue() + ":"+ cmbMinutos.getValue()+":00";
+       String horaSa = cmbHoras1.getValue() + ":"+ cmbMinutos1.getValue()+":00";
+       
+       registrarReserva(codigoUnico, horaIn, horaSa, fechaIn, fechaSa, cedulaUsr, nHabitacion);
+       
+        ocultarSecciones();
+            mostrarNombre.setText("Se ha completado su reserva :)");
+            Alert alerta = new Alert(AlertType.INFORMATION);
+            alerta.setTitle("Se ha registrado su reserva con exito");
+            alerta.setHeaderText("Importante.");
+            alerta.setContentText("Su fecha de ingreso es: "+ fechaIn+  "\n Recuerde que su habitación es: " + nHabitacion);
+            alerta.showAndWait();
+       
+       
+   
+   }
+   private void registrarReserva(int codigoUnico, String horaCheckin, String horaCheckout, String fechaInicio, String fechaFin, String cedHuesped, int nroHabitacion) {
+        String sql = "{call RegistrarReserva (?, ?, ?, ?, ?, ?, ?)}";
+        
+        try (Connection conn = AzureConexion.getConnection();
+             CallableStatement stmt = conn.prepareCall(sql)) {
 
+            stmt.setInt(1, codigoUnico);
+            stmt.setString(2, horaCheckin);
+            stmt.setString(3, horaCheckout);
+            stmt.setDate(4, java.sql.Date.valueOf(fechaInicio));
+            stmt.setDate(5, java.sql.Date.valueOf(fechaFin));
+            stmt.setString(6, cedHuesped);
+            stmt.setInt(7, nroHabitacion);
+            
+            
+
+            stmt.executeUpdate();
+            
+            
+        stmt.close();
+        conn.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace(); // Manejo de errores en la conexión o ejecución del procedimiento
+        }
+        
+    }
 }

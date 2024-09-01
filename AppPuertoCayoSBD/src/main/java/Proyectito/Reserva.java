@@ -15,70 +15,33 @@ import java.time.LocalTime;
  * @author gasaesco
  */
 public class Reserva {
-    private int codigoUnico;
-    private LocalTime horaCheckin;
-    private LocalTime hraCheckout;
+    private String cedula;
     private LocalDate fechaInicio;
     private LocalDate fechaFin;
-    private Huesped huesped;
+    private int habitacion;
 
-    public Reserva(int codigoUnico, LocalTime horaCheckin, LocalTime hraCheckout, LocalDate fechaInicio, LocalDate fechaFin, Huesped huesped) {
-        this.codigoUnico = codigoUnico;
-        this.horaCheckin = horaCheckin;
-        this.hraCheckout = hraCheckout;
+    public Reserva(String cedula, LocalDate fechaInicio, LocalDate fechaFin, int habitacion) {
+        this.cedula = cedula;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
-        this.huesped = huesped;
+        this.habitacion = habitacion;
     }
 
-    public int getCodigoUnico() {
-        return codigoUnico;
-    }
-
-    public void setCodigoUnico(int codigoUnico) {
-        this.codigoUnico = codigoUnico;
-    }
-
-    public LocalTime getHoraCheckin() {
-        return horaCheckin;
-    }
-
-    public void setHoraCheckin(LocalTime horaCheckin) {
-        this.horaCheckin = horaCheckin;
-    }
-
-    public LocalTime getHraCheckout() {
-        return hraCheckout;
-    }
-
-    public void setHraCheckout(LocalTime hraCheckout) {
-        this.hraCheckout = hraCheckout;
+    public String getCedula() {
+        return cedula;
     }
 
     public LocalDate getFechaInicio() {
         return fechaInicio;
     }
 
-    public void setFechaInicio(LocalDate fechaInicio) {
-        this.fechaInicio = fechaInicio;
-    }
-
     public LocalDate getFechaFin() {
         return fechaFin;
     }
 
-    public void setFechaFin(LocalDate fechaFin) {
-        this.fechaFin = fechaFin;
+    public int getHabitacion() {
+        return habitacion;
     }
-
-    public Huesped getHuesped() {
-        return huesped;
-    }
-
-    public void setHuesped(Huesped huesped) {
-        this.huesped = huesped;
-    }
-
     
     
 }
