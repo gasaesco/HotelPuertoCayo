@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.CallableStatement;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Types;
@@ -23,6 +24,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -86,6 +88,7 @@ public class VerReservasController implements Initializable {
     
     private static String cedulaUsr;
     ObservableList<Reserva> reservas = FXCollections.observableArrayList();
+    private final ObservableList<Integer> habitacionesDisponibles= FXCollections.observableArrayList();
     private static int numHabitacion;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -177,7 +180,30 @@ public class VerReservasController implements Initializable {
      @FXML
      private void botonCancelar(){
          btnCancelar.setOnAction(event -> {
-             eliminarReserva(numHabitacion, cedulaUsr);
+             Alert alerta = new Alert(Alert.AlertType.CONFIRMATION);
+            alerta.setTitle("Está seguro de eliminar su reserva?");
+            alerta.setHeaderText(null);
+            alerta.setContentText("Está de acuerdo con eliminar su reserva?");
+            alerta.showAndWait().ifPresent(response ->{
+                if (response == ButtonType.OK) {
+                 eliminarReserva(numHabitacion, cedulaUsr);
+            } else {
+             Alert aler = new Alert(Alert.AlertType.INFORMATION);
+             aler.setTitle("Reserva no Eliminada");
+            aler.setHeaderText(null);
+            aler.setContentText("La reserva NO se eliminó");
+            aler.showAndWait();
+             tablaReservas.getItems().clear();
+             dateInicio.setValue(null);
+             dateFin.setValue(null);
+             habitaciones.setValue(null);
+            }
+                Alert aler = new Alert(Alert.AlertType.INFORMATION);
+                   aler.setTitle("Reserva Eliminada");
+                   aler.setHeaderText(null);
+                   aler.setContentText("Se ha eliminado la reserva");
+                   aler.showAndWait();
+            });
              tablaReservas.getItems().clear();
              try {
                  rellenarTabla();
@@ -199,6 +225,7 @@ public class VerReservasController implements Initializable {
            tablaReservas.getItems().clear();
            btnCancelar.setDisable(true);
            btnModificar.setDisable(true);
+           rellenarCombos();
          
                   
        }else{
@@ -259,6 +286,8 @@ public class VerReservasController implements Initializable {
     });
    }
    
+   
+   
    private void eliminarReserva(int nHabitacion, String cedula){
         String sql = "{call EliminarReserva (?, ?)}";
         try (Connection conn = AzureConexion.getConnection();
@@ -272,8 +301,68 @@ public class VerReservasController implements Initializable {
         conn.close();
 
         } catch (SQLException e) {
-            e.printStackTrace(); // Manejo de errores en la conexión o ejecución del procedimiento
+             Alert aler = new Alert(Alert.AlertType.ERROR);
+             aler.setTitle("No se ha eliminado ");
+            aler.setHeaderText("No se pudo eliminar");
+            aler.setContentText("La reserva NO se eliminó porque el pago ya fue realizado");
+            aler.showAndWait();
         }
         
+    }
+    private void setearComboHabitaciones() throws SQLException {
+        Connection conexion = null;
+        CallableStatement stmt = null;
+         try {
+        // Establecer conexión
+        conexion = AzureConexion.getConnection();
+        String consulta = "{CALL habitacionesDisponibles()}";
+        stmt = conexion.prepareCall(consulta);
+        ResultSet rs = stmt.executeQuery();
+        
+        while(rs.next()){
+            int nroHabitacion = rs.getInt("nroHabitacion");
+            habitacionesDisponibles.add(nroHabitacion);
+            
+        }
+        habitaciones.setItems(habitacionesDisponibles);
+         
+         }catch (SQLException e) { 
+         
+            }
+   
+   }
+    
+    private void ModificarReserva(String cedula, int ahabitacion, LocalDate fechain, LocalDate fechafin , int nHabitacion){
+        String sql = "{call ModificarReserva (?, ?,?,?,?)}";
+        try (Connection conn = AzureConexion.getConnection();
+             CallableStatement stmt = conn.prepareCall(sql)) {
+            stmt.setString(1, cedula);
+            stmt.setInt(2, ahabitacion);
+            stmt.setDate(3, Date.valueOf(fechain));  
+            stmt.setDate(4, Date.valueOf(fechafin)); 
+            stmt.setInt(5, nHabitacion);
+            stmt.executeUpdate();
+            
+            
+        stmt.close();
+        conn.close();
+        
+
+        } catch (SQLException e) {
+            
+        }
+        
+    }
+    @FXML
+    private void darInformación(){
+         ModificarReserva(cedulaUsr, numHabitacion, dateInicio.getValue(), dateFin.getValue(), (int) habitaciones.getValue());
+          Alert aler = new Alert(Alert.AlertType.INFORMATION);
+             aler.setTitle("Reserva Actualizada");
+            aler.setHeaderText(null);
+            aler.setContentText("La reserva se ha actualizado");
+            aler.showAndWait();
+    }
+    private void rellenarCombos() throws SQLException{
+        setearComboHabitaciones();
     }
 }
