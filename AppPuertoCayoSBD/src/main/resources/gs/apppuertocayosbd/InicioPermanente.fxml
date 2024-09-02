@@ -10,13 +10,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gs.apppuertocayosbd.InicioEmpleadoController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gs.apppuertocayosbd.InicioPermanenteController">
    <top>
       <HBox alignment="CENTER_LEFT" prefWidth="720.0" style="-fx-background-color: #26232A;" BorderPane.alignment="CENTER">
          <children>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="78.0">
                <children>
-                  <Button fx:id="back" mnemonicParsing="false" onAction="#regresar" style="-fx-background-color: transparent;">
+                  <Button fx:id="back" mnemonicParsing="false" style="-fx-background-color: transparent;">
                      <graphic>
                         <ImageView fitHeight="47.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -41,7 +41,7 @@
             </HBox>
             <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="710.0">
                <children>
-                  <Label text="Inicio Empleado" textAlignment="RIGHT" textFill="WHITE">
+                  <Label text="Inicio Empleado Permanente" textAlignment="RIGHT" textFill="WHITE">
                      <font>
                         <Font name="Franklin Gothic Demi" size="30.0" />
                      </font>
@@ -58,36 +58,28 @@
       <VBox prefHeight="200.0" prefWidth="540.0" stylesheets="@styles/estilos.css" BorderPane.alignment="CENTER">
          <children>
             <HBox alignment="CENTER">
-               <children>
-                  <Label text="Bienvenido" />
-               </children>
                <VBox.margin>
                   <Insets top="30.0" />
                </VBox.margin>
             </HBox>
             <VBox alignment="CENTER" prefHeight="463.0" prefWidth="540.0">
                <children>
-                  <Label text="Seleccione que usuario es" />
-                  <Button fx:id="manager" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="50.0" text="Manager">
+                  <Button fx:id="manager" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="50.0" text="Ver Proveedor">
                      <VBox.margin>
                         <Insets bottom="10.0" top="10.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="temporal" mnemonicParsing="false" prefHeight="50.0" text="Temporal">
+                  <Button fx:id="temporal" mnemonicParsing="false" prefHeight="50.0" text="Registrar Proveedor">
                      <VBox.margin>
                         <Insets bottom="10.0" top="10.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="permanente" mnemonicParsing="false" prefHeight="50.0" text="Permanente">
+                  <Button fx:id="permanente" mnemonicParsing="false" prefHeight="50.0" text="Ver Servicios">
                      <VBox.margin>
                         <Insets bottom="10.0" top="10.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="administrador" mnemonicParsing="false" prefHeight="50.0" text="Administrador">
-                     <VBox.margin>
-                        <Insets bottom="10.0" top="10.0" />
-                     </VBox.margin>
-                  </Button>
+                  <Button fx:id="permanente1" mnemonicParsing="false" prefHeight="50.0" text="Registrar Servicios" />
                </children>
             </VBox>
          </children>
@@ -98,7 +90,7 @@
          <children>
             <ImageView fitHeight="520.0" fitWidth="540.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../images/empleado/empleadoBanner.jpg" />
+                  <Image url="@../../images/empleado/temporal.jpg" />
                </image>
             </ImageView>
          </children>
