@@ -99,7 +99,7 @@ private final ObservableList<Huesped> lHuesped = FXCollections.observableArrayLi
    }
     @FXML
     private void regresar() throws IOException{
-        App.setRoot("InicioHuesped");
+        App.setRoot("InicioAdministrador");
     }
     
   

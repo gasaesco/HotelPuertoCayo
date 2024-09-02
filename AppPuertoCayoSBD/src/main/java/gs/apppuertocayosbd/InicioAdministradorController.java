@@ -4,9 +4,14 @@
  */
 package gs.apppuertocayosbd;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 
 /**
  *
@@ -14,12 +19,47 @@ import javafx.fxml.Initializable;
  */
 public class InicioAdministradorController implements Initializable {
 
-    /**
-     * Initializes the controller class.
-     */
+       @FXML
+    private Button back;
+       @FXML
+       private Button verEmpleados;
+       @FXML
+       private Button verHuespedes;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+        IniciarBotones();
+    }   
+    
+    @FXML
+    private void regresar() throws IOException{
+        App.setRoot("InicioAdministrador");
+    }
+    @FXML 
+    private void datosHuespedes() throws IOException{
+        App.setRoot("DatosHuesped");
+    }
+    private void botonRegresar(){
+    back.setOnAction(event -> {
+           try {
+               regresar();
+           } catch (IOException ex) {
+               Logger.getLogger(PrincipalitoFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+           }
+       });
+    }
+    private void botonverHuesped(){
+    verHuespedes.setOnAction(event -> {
+           try {
+               datosHuespedes();
+           } catch (IOException ex) {
+               Logger.getLogger(PrincipalitoFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+           }
+       });
+    }
+    private void IniciarBotones(){
+        botonRegresar();
+        botonverHuesped();
+    }
     
 }
+ 

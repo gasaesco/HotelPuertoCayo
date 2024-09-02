@@ -59,17 +59,7 @@
          <children>
             <VBox alignment="CENTER" prefHeight="541.0" prefWidth="540.0">
                <children>
-                  <Button fx:id="manager" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="50.0" text="Registrar Empleado">
-                     <VBox.margin>
-                        <Insets bottom="10.0" top="10.0" />
-                     </VBox.margin>
-                  </Button>
-                  <Button fx:id="temporal" mnemonicParsing="false" prefHeight="50.0" text="Registrar Servicio">
-                     <VBox.margin>
-                        <Insets bottom="10.0" top="10.0" />
-                     </VBox.margin>
-                  </Button>
-                  <Button fx:id="permanente" mnemonicParsing="false" prefHeight="50.0" text="Registrar Proveedor">
+                  <Button fx:id="rEmpleado" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="50.0" text="Registrar Empleado">
                      <VBox.margin>
                         <Insets bottom="10.0" top="10.0" />
                      </VBox.margin>
@@ -84,22 +74,22 @@
          <children>
             <VBox alignment="CENTER" prefHeight="579.0" prefWidth="540.0">
                <children>
-                  <Button fx:id="manager11" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="50.0" text="Ver Empleados">
+                  <Button fx:id="verEmpleados" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="50.0" text="Ver Empleados">
                      <VBox.margin>
                         <Insets bottom="10.0" top="10.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="manager111" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="50.0" text="Ver Huéspedes">
+                  <Button fx:id="verHuespedes" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="50.0" text="Ver Huéspedes">
                      <VBox.margin>
                         <Insets bottom="10.0" top="10.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="manager1" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="50.0" text="Ver Servicios">
+                  <Button fx:id="verServicios" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="50.0" text="Ver Servicios">
                      <VBox.margin>
                         <Insets bottom="10.0" top="10.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="temporal1" mnemonicParsing="false" prefHeight="50.0" text="Ver Proveedor">
+                  <Button fx:id="verProovedor" mnemonicParsing="false" prefHeight="50.0" text="Ver Proveedor">
                      <VBox.margin>
                         <Insets bottom="10.0" top="10.0" />
                      </VBox.margin>
