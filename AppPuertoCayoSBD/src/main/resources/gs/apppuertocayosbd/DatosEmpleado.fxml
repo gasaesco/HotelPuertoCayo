@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gs.apppuertocayosbd.InicioEmpleadoController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gs.apppuertocayosbd.DatosEmpleadoController">
    <top>
       <HBox alignment="CENTER_LEFT" prefWidth="720.0" style="-fx-background-color: #26232A;" BorderPane.alignment="CENTER">
          <children>
@@ -84,9 +84,9 @@
                         <TableColumn fx:id="nombres" prefWidth="75.0" text="Nombres" />
                         <TableColumn fx:id="apellidos" prefWidth="75.0" text="Apellidos" />
                         <TableColumn fx:id="cargo" prefWidth="75.0" text="Cargo" />
-                        <TableColumn prefWidth="75.0" text="Tipo" />
-                        <TableColumn prefWidth="75.0" text="Salario" />
-                        <TableColumn prefWidth="75.0" text="Jefe" />
+                        <TableColumn fx:id="tipo" prefWidth="75.0" text="Tipo" />
+                        <TableColumn fx:id="salario" prefWidth="75.0" text="Salario" />
+                        <TableColumn fx:id="jefe" prefWidth="75.0" text="Jefe" />
                     </columns>
                      <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

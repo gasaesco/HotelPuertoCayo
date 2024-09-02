@@ -62,7 +62,7 @@
                   <Insets top="30.0" />
                </VBox.margin>
             </HBox>
-            <VBox alignment="CENTER" prefHeight="463.0" prefWidth="540.0">
+            <VBox alignment="CENTER" prefHeight="463.0" prefWidth="540.0" style="visibility: false;">
                <children>
                   <Button fx:id="manager" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="50.0" text="Registrar Huésped">
                      <VBox.margin>

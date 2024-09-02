@@ -59,7 +59,6 @@ public class InicioHuespedController implements Initializable {
            }
        });
     }
-     
      private void botonRegistrarReserva(){
          btnRegistrarReserva.setOnAction(event -> {
            try {

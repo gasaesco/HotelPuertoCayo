@@ -32,11 +32,15 @@ public class InicioAdministradorController implements Initializable {
     
     @FXML
     private void regresar() throws IOException{
-        App.setRoot("InicioAdministrador");
+        App.setRoot("PrincipalitoFXML");
     }
     @FXML 
     private void datosHuespedes() throws IOException{
         App.setRoot("DatosHuesped");
+    }
+    @FXML 
+    private void datosEmpleados() throws IOException{
+        App.setRoot("DatosEmpleados");
     }
     private void botonRegresar(){
     back.setOnAction(event -> {
@@ -56,9 +60,20 @@ public class InicioAdministradorController implements Initializable {
            }
        });
     }
+     private void botonverEmpleados(){
+    verEmpleados.setOnAction(event -> {
+           try {
+               datosEmpleados();
+           } catch (IOException ex) {
+               Logger.getLogger(PrincipalitoFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+           }
+       });
+    }
+    
     private void IniciarBotones(){
         botonRegresar();
         botonverHuesped();
+        botonverEmpleados();
     }
     
 }

@@ -68,6 +68,11 @@
             <VBox alignment="CENTER" prefHeight="463.0" prefWidth="540.0">
                <children>
                   <Label text="Seleccione que usuario es" />
+                  <Button fx:id="administrador" mnemonicParsing="false" prefHeight="50.0" text="Administrador">
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Button>
                   <Button fx:id="manager" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="50.0" text="Manager">
                      <VBox.margin>
                         <Insets bottom="10.0" top="10.0" />
@@ -79,11 +84,6 @@
                      </VBox.margin>
                   </Button>
                   <Button fx:id="permanente" mnemonicParsing="false" prefHeight="50.0" text="Permanente">
-                     <VBox.margin>
-                        <Insets bottom="10.0" top="10.0" />
-                     </VBox.margin>
-                  </Button>
-                  <Button fx:id="administrador" mnemonicParsing="false" prefHeight="50.0" text="Administrador">
                      <VBox.margin>
                         <Insets bottom="10.0" top="10.0" />
                      </VBox.margin>
